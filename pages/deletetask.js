@@ -5,7 +5,7 @@ import { IoClose } from 'react-icons/io5'
 export default function Deletetask({ data }) {
     const router = useRouter()
     const deleteTask = async (id) => {
-        const response = await fetch(`http://localhost:3000/api/tasks/${id}`, {
+        const response = await fetch(`https://notepad.omgismartinez.vercel.app/api/tasks/${id}`, {
             method: 'DELETE',
         })
         if (response.ok) {

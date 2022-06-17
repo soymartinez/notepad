@@ -17,7 +17,7 @@ export default function Createtask() {
 
     const createTask = async () => {
         const { title, description } = task;
-        const response = await fetch('https://notepad.vercel.app/api/tasks', {
+        const response = await fetch('https://notepad.omgismartinez.vercel.app/api/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export default function Createtask() {
     }
 
     const updateTask = async () => {
-        const response = await fetch(`https://notepad.vercel.app/api/tasks/${query.id}`, {
+        const response = await fetch(`https://notepad.omgismartinez.vercel.app/api/tasks/${query.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export default function Createtask() {
     }
 
     const getTask = async (id) => {
-        const response = await fetch(`https://notepad.vercel.app/api/tasks/${id}`)
+        const response = await fetch(`https://notepad.omgismartinez.vercel.app/api/tasks/${id}`)
         const data = await response.json()
         console.log(data)
         setTask({
