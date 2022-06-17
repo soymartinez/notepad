@@ -1,13 +1,16 @@
 import Layout from 'components/layout'
+import { useRouter } from 'next/router'
+import { AiTwotoneEdit } from 'react-icons/ai'
 
-export default function Home({ data }) {
+export default function UpdateTask({ data }) {
+  const router = useRouter()
   return (
-    <Layout title={`Notepad`}>
+    <Layout title={'Update Task'}>
       <div className='flex flex-wrap gap-2'>
         {
           data.map(task => (
             <article key={task._id}
-              className={`w-full h-full p-4 rounded-md transition-all relative
+              className={`w-full p-4 rounded-md transition-all relative
                       border-4 border-violet-400 hover:border-violet-500`}>
               <h2>
                 <span className='font-bold'>Title:</span> {task.title}
@@ -18,6 +21,10 @@ export default function Home({ data }) {
               <h2>
                 <span className='font-bold'>Completed:</span> {task.completed.toString()}
               </h2>
+              <button className='bg-orange-500 hover:bg-orange-600 text-white w-9 h-5
+                                -top-3 -right-3 font-bold rounded-full absolute transition-all
+                                hover:scale-105 active:scale-95'
+                onClick={() => router.push(`${task._id}`)}><AiTwotoneEdit /></button>
             </article>
           ))
         }
